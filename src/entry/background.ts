@@ -1,5 +1,3 @@
-console.log("content script loaded");
-
 const blocklist = [
   "www.youtube.com",
   "youtube.com",
