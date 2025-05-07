@@ -3,6 +3,10 @@ const blocklist = [
   'youtube.com',
   'deliveroo.co.uk',
   'www.deliveroo.co.uk',
+  'www.netflix.com',
+  'netflix.com',
+  'www.disneyplus.com',
+  'disneyplus.com',
 ];
 
 async function handle(tabId: number) {
