@@ -8,5 +8,12 @@
         "48": "assets/icon-48.png"
     },
     "options_page": "dist/entry/options.html",
-    "permissions": ["activeTab"]
+    "background": {
+        "service_worker": "dist/background.js"
+    },
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "permissions": ["activeTab", "tabs"]
 }

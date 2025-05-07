@@ -9,6 +9,7 @@ export default defineConfig({
       entry: {
         options: "entry/options.html",
         blocked: "entry/blocked.html",
+        background: "entry/background.ts",
       },
       name: "Blockly",
     },
