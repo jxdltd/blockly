@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "manifest_version": 3,
+    "name": "Blockly",
+    "description": "Block distracting websites",
+    "version": "0.1.0",
+    "icons": {
+        "48": "assets/icon-48.png"
+    },
+    "permissions": ["activeTab"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["dist/content.js"]
+        }
+    ]
+}
