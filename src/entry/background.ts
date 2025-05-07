@@ -1,6 +1,11 @@
 console.log("content script loaded");
 
-const blocklist = ["https://www.youtube.com"];
+const blocklist = [
+  "www.youtube.com",
+  "youtube.com",
+  "deliveroo.co.uk",
+  "www.deliveroo.co.uk",
+];
 
 async function handle(tabId: number) {
   const tab = await chrome.tabs.get(tabId);
@@ -11,7 +16,7 @@ async function handle(tabId: number) {
 
   const url = new URL(tab.url);
 
-  if (blocklist.includes(url.origin)) {
+  if (blocklist.includes(url.host)) {
     chrome.tabs.update(tabId, {
       url: `chrome-extension://${chrome.runtime.id}/src/entry/blocked.html`,
     });
