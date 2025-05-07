@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "strictNullChecks": true,
+    "strict": true,
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "lib": ["ESNext", "DOM"]
   }
 }

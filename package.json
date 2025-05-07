@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build"
+    "build": "vite build",
+    "www": "astro dev --root ./www",
+    "www:build": "astro build --root ./www"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@astrojs/vercel": "^8.1.4",
     "@biomejs/biome": "1.9.4",
     "@types/chrome": "^0.0.320",
+    "astro": "^5.7.11",
     "typescript": "^5.8.3",
     "ultracite": "4.2.4",
     "vite": "^6.3.5"
