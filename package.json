@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/chrome": "^0.0.320",
     "typescript": "^5.8.3",
+    "ultracite": "4.2.4",
     "vite": "^6.3.5"
   }
 }

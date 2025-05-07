@@ -1,12 +1,6 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist",
-        "lib": ["ESNext", "DOM"]
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-    ]
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "lib": ["ESNext", "DOM"]
+  }
 }
