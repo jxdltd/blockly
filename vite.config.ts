@@ -8,6 +8,7 @@ export default defineConfig({
     lib: {
       entry: {
         options: "entry/options.html",
+        blocked: "entry/blocked.html",
       },
       name: "Blockly",
     },
