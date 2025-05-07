@@ -15,6 +15,7 @@
   "devDependencies": {
     "@astrojs/vercel": "^8.1.4",
     "@biomejs/biome": "1.9.4",
+    "@lucide/astro": "^0.508.0",
     "@tailwindcss/vite": "^4.1.5",
     "@types/chrome": "^0.0.320",
     "astro": "^5.7.11",
