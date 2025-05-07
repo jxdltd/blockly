@@ -20,7 +20,7 @@ async function handle(tabId: number) {
 
   if (blocklist.includes(url.host)) {
     chrome.tabs.update(tabId, {
-      url: `chrome-extension://${chrome.runtime.id}/src/entry/blocked.html`,
+      url: `chrome-extension://${chrome.runtime.id}/entry/blocked.html`,
     });
   }
 }

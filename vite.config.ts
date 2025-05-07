@@ -1,17 +1,19 @@
-import { defineConfig } from "vite";
+import tailwind from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: "src",
+  plugins: [tailwind()],
+  root: 'src',
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: false,
     lib: {
       entry: {
-        options: "entry/options.html",
-        blocked: "entry/blocked.html",
-        background: "entry/background.ts",
+        options: 'entry/options.html',
+        blocked: 'entry/blocked.html',
+        background: 'entry/background.ts',
       },
-      name: "Blockly",
+      name: 'Blockly',
     },
   },
 });
