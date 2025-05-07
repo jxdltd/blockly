@@ -2,8 +2,8 @@ console.log("content script loaded");
 
 const blocklist = ["https://www.youtube.com"];
 
-chrome.tabs.onActivated.addListener(async (info) => {
-  const tab = await chrome.tabs.get(info.tabId);
+async function handle(tabId: number) {
+  const tab = await chrome.tabs.get(tabId);
 
   if (!tab.url) {
     return;
@@ -12,8 +12,11 @@ chrome.tabs.onActivated.addListener(async (info) => {
   const url = new URL(tab.url);
 
   if (blocklist.includes(url.origin)) {
-    chrome.tabs.update(info.tabId, {
+    chrome.tabs.update(tabId, {
       url: `chrome-extension://${chrome.runtime.id}/src/entry/blocked.html`,
     });
   }
-});
+}
+
+chrome.tabs.onActivated.addListener((info) => handle(info.tabId));
+chrome.tabs.onUpdated.addListener((tabId) => handle(tabId));
