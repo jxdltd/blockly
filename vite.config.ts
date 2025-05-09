@@ -1,8 +1,9 @@
+import preact from '@preact/preset-vite';
 import tailwind from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [tailwind()],
+  plugins: [preact(), tailwind()],
   root: 'src',
   build: {
     outDir: '../dist',

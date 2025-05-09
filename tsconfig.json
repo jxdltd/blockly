@@ -2,8 +2,16 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "strict": true,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "lib": ["ESNext", "DOM"]
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "skipLibCheck": true,
+    "paths": {
+      "react": ["./node_modules/preact/compat/"],
+      "react-dom": ["./node_modules/preact/compat/"]
+    }
   }
 }
