@@ -27,3 +27,8 @@ async function handle(tabId: number) {
 
 chrome.tabs.onActivated.addListener((info) => handle(info.tabId));
 chrome.tabs.onUpdated.addListener((tabId) => handle(tabId));
+
+chrome.action.onClicked.addListener(() => {
+  console.log('Opening options page');
+  chrome.runtime.openOptionsPage();
+});

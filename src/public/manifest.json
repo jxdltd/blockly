@@ -7,6 +7,7 @@
   "icons": {
     "48": "assets/icon-48.png"
   },
+  "action": {},
   "options_page": "entry/options.html",
   "background": {
     "service_worker": "background.js"
