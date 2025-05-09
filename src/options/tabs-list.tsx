@@ -11,6 +11,20 @@ export function TabsList() {
     getTabs().then(setTabs);
   }, []);
 
+  function handleBlock(url?: string) {
+    if (!url) {
+      return;
+    }
+
+    chrome.storage.local.get('blocklist', ({ blocklist = [] }) => {
+      const host = new URL(url).host;
+      if (!blocklist.includes(host)) {
+        blocklist.push(host);
+        chrome.storage.local.set({ blocklist });
+      }
+    });
+  }
+
   return (
     <div>
       <div class="mb-5 font-medium text-lg">Open Tabs</div>
@@ -23,7 +37,11 @@ export function TabsList() {
               <div class="size-5 rounded-lg bg-stone-300" />
             )}
             <span>{tab.title}</span>
-            <button type="button" class="ml-auto border">
+            <button
+              onClick={() => handleBlock(tab.url)}
+              type="button"
+              class="ml-auto border"
+            >
               Block
             </button>
           </div>

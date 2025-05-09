@@ -1,15 +1,5 @@
-const blocklist = [
-  'www.youtube.com',
-  'youtube.com',
-  'deliveroo.co.uk',
-  'www.deliveroo.co.uk',
-  'www.netflix.com',
-  'netflix.com',
-  'www.disneyplus.com',
-  'disneyplus.com',
-];
-
 async function handle(tabId: number) {
+  const { blocklist = [] } = await chrome.storage.local.get('blocklist');
   const tab = await chrome.tabs.get(tabId);
 
   if (!tab.url) {
