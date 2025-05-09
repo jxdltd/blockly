@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
+    "ext": "vite build --watch",
+    "ext:build": "vite build",
     "www": "astro dev --root ./www",
     "www:build": "astro build --root ./www"
   },
