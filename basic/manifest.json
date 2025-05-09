@@ -6,6 +6,5 @@
   "background": {
     "service_worker": "background.js"
   },
-  "host_permissions": ["https://*/*", "http://*/*"],
-  "permissions": ["activeTab", "tabs"]
+  "host_permissions": ["https://*/*", "http://*/*"]
 }
