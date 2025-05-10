@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
+import { blocklist } from '../signals/blocklist';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
 function getTabs(): Promise<chrome.tabs.Tab[]> {
@@ -17,11 +18,12 @@ export function TabsList() {
       return;
     }
 
-    chrome.storage.local.get('blocklist', ({ blocklist = [] }) => {
+    chrome.storage.local.get('blocklist', ({ blocklist: found = [] }) => {
       const host = new URL(url).host;
-      if (!blocklist.includes(host)) {
-        blocklist.push(host);
-        chrome.storage.local.set({ blocklist });
+      if (!found.includes(host)) {
+        found.push(host);
+        chrome.storage.local.set({ blocklist: found });
+        blocklist.value = found;
       }
     });
   }
