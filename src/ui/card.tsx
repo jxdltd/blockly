@@ -12,7 +12,7 @@ export function Card({ children }: { children: ComponentChildren }) {
 }
 
 export function CardHeader({ children }: { children: ComponentChildren }) {
-  return <div class="border-b p-5">{children}</div>;
+  return <div class="border-stone-300 border-b p-5">{children}</div>;
 }
 
 export function CardTitle({ children }: { children: ComponentChildren }) {

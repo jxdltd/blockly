@@ -9,6 +9,7 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: false,
     lib: {
+      formats: ['es'],
       entry: {
         options: 'entry/options.html',
         blocked: 'entry/blocked.html',

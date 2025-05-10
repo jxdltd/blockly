@@ -31,7 +31,7 @@ export function TabsList() {
       <CardHeader>
         <CardTitle>Open Tabs</CardTitle>
       </CardHeader>
-      <CardContent class="space-y-3">
+      <CardContent class="space-y-5">
         {tabs.map((tab) => (
           <div key={tab.id} class="flex items-center gap-3">
             {tab.favIconUrl ? (
@@ -43,7 +43,7 @@ export function TabsList() {
             <button
               onClick={() => handleBlock(tab.url)}
               type="button"
-              class="ml-auto border"
+              class="ml-auto rounded-md bg-red-500 px-2 py-1 font-medium text-sm text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
               Block
             </button>
