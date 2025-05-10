@@ -1,7 +1,12 @@
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+
 export function BlockList() {
   return (
-    <div>
-      <div className="font-medium text-lg">Blocked</div>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Blocked</CardTitle>
+      </CardHeader>
+      <CardContent>Todo</CardContent>
+    </Card>
   );
 }

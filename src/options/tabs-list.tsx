@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
 function getTabs(): Promise<chrome.tabs.Tab[]> {
   return chrome.tabs.query({ currentWindow: true });
@@ -26,9 +27,11 @@ export function TabsList() {
   }
 
   return (
-    <div>
-      <div class="mb-5 font-medium text-lg">Open Tabs</div>
-      <div class="space-y-3">
+    <Card>
+      <CardHeader>
+        <CardTitle>Open Tabs</CardTitle>
+      </CardHeader>
+      <CardContent class="space-y-3">
         {tabs.map((tab) => (
           <div key={tab.id} class="flex items-center gap-3">
             {tab.favIconUrl ? (
@@ -46,7 +49,7 @@ export function TabsList() {
             </button>
           </div>
         ))}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
