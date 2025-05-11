@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "ext": "vite build --watch",
-    "ext:build": "vite build",
+    "ext:build": "rm -rf dist && vite build",
+    "ext:zip": "rm -rf dist.zip && zip -r dist.zip dist",
     "www": "astro dev --root ./www",
     "www:build": "astro build --root ./www"
   },
