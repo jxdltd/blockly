@@ -7,7 +7,7 @@
   "scripts": {
     "ext": "vite build --watch",
     "ext:build": "rm -rf dist && vite build",
-    "ext:zip": "rm -rf dist.zip && zip -r dist.zip dist",
+    "ext:zip": "rm -rf dist.zip && zip -r releases/$(cat src/public/manifest.json | jq -r '.version') dist",
     "www": "astro dev --root ./www",
     "www:build": "astro build --root ./www"
   },
