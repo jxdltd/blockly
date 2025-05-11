@@ -2,12 +2,33 @@ import { useEffect, useState } from 'preact/hooks';
 import { blocklist } from '../signals/blocklist';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
-function getTabs(): Promise<chrome.tabs.Tab[]> {
-  return chrome.tabs.query({ currentWindow: true });
+type Tab = {
+  id: number;
+  title: string;
+  url: string;
+  favIconUrl: string;
+};
+
+async function getTabs(): Promise<Tab[]> {
+  const tabs = await chrome.tabs.query({ currentWindow: true });
+
+  return tabs
+    .map((t) => {
+      if (t.id && t.title && t.url && t.favIconUrl) {
+        return {
+          id: t.id,
+          title: t.title,
+          url: t.url,
+          favIconUrl: t.favIconUrl,
+        };
+      }
+      return false;
+    })
+    .filter(Boolean) as Tab[]; // todo use ts-reset
 }
 
 export function TabsList() {
-  const [tabs, setTabs] = useState<chrome.tabs.Tab[]>([]);
+  const [tabs, setTabs] = useState<Tab[]>([]);
 
   useEffect(() => {
     getTabs().then(setTabs);
