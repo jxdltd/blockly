@@ -4,6 +4,10 @@ Block distracting websites.
 
 > Looking for a basic implementation? Checkout [Basic Blockly](./basic/).
 
+## Links
+
+- [Manual Installation](./installation.md)
+
 ## Getting Started
 
 ```sh
