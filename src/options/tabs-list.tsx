@@ -6,7 +6,7 @@ type Tab = {
   id: number;
   title: string;
   url: string;
-  favIconUrl: string;
+  favIconUrl?: string;
 };
 
 async function getTabs(): Promise<Tab[]> {
@@ -14,7 +14,7 @@ async function getTabs(): Promise<Tab[]> {
 
   return tabs
     .map((t) => {
-      if (t.id && t.title && t.url && t.favIconUrl) {
+      if (t.id && t.title && t.url) {
         return {
           id: t.id,
           title: t.title,
@@ -58,7 +58,11 @@ export function TabsList() {
         {tabs.map((tab) => (
           <div key={tab.id} class="flex items-center gap-3">
             {tab.favIconUrl ? (
-              <img class="size-5" src={tab.favIconUrl} alt={tab.title} />
+              <img
+                class="size-10 rounded-lg bg-zinc-100 p-3"
+                src={tab.favIconUrl}
+                alt={tab.title}
+              />
             ) : (
               <div class="size-5 rounded-lg bg-stone-300" />
             )}
