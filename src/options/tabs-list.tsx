@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
+import { Button } from '~/ui/button';
 import { blocklist } from '../signals/blocklist';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 
@@ -54,7 +55,7 @@ export function TabsList() {
       <CardHeader>
         <CardTitle>Open Tabs</CardTitle>
       </CardHeader>
-      <CardContent class="space-y-5">
+      <CardContent class="space-y-8">
         {tabs.map((tab) => (
           <div key={tab.id} class="flex items-center gap-3">
             {tab.favIconUrl ? (
@@ -66,14 +67,10 @@ export function TabsList() {
             ) : (
               <div class="size-10 rounded-xl bg-stone-800" />
             )}
-            <span class="truncate">{tab.title}</span>
-            <button
-              onClick={() => handleBlock(tab.url)}
-              type="button"
-              class="ml-auto rounded-md bg-red-500 px-2 py-1 font-medium text-sm text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-            >
+            <span class="mr-auto truncate text-lg">{tab.title}</span>
+            <Button onClick={() => handleBlock(tab.url)} type="button">
               Block
-            </button>
+            </Button>
           </div>
         ))}
       </CardContent>

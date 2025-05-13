@@ -29,5 +29,6 @@
       "source.fixAll.biome": "never",
       "source.organizeImports.biome": "never"
     }
-  }
+  },
+  "tailwindCSS.classFunctions": ["cva", "cx"]
 }

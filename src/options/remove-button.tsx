@@ -1,11 +1,11 @@
 import {
-  Button,
   Dialog,
   DialogBackdrop,
   DialogPanel,
   DialogTitle,
 } from '@headlessui/react';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { Button } from '~/ui/button';
 import { blocklist } from '../signals/blocklist';
 
 type Props = {
@@ -43,15 +43,13 @@ export function RemoveButton({ host }: Props) {
     chrome.storage.local.set({ blocklist: blocklist.value });
   }
 
+  const canRemove = secondsRemaining <= 0;
+
   return (
     <>
-      <button
-        type="button"
-        class="rounded px-2 py-1 font-medium text-sm hover:bg-stone-50"
-        onClick={() => setOpen(true)}
-      >
+      <Button intent="destructive" onClick={() => setOpen(true)}>
         Remove
-      </button>
+      </Button>
       <Dialog
         open={open}
         as="div"
@@ -60,14 +58,14 @@ export function RemoveButton({ host }: Props) {
       >
         <DialogBackdrop
           transition
-          className="fixed inset-0 bg-black/30 duration-200 ease-out data-closed:opacity-0"
+          className="fixed inset-0 bg-black/50 duration-200 ease-out data-closed:opacity-0"
         />
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
             <DialogPanel
               transition
-              className="data-closed:transform-[scale(95%)] w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-closed:opacity-0"
+              className="data-closed:transform-[scale(95%)] w-full max-w-md rounded-xl border-2 border-stone-800 bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-closed:opacity-0"
             >
               <DialogTitle as="h3" className="font-medium">
                 Are you sure?
@@ -77,18 +75,22 @@ export function RemoveButton({ host }: Props) {
                 blocklist?
               </p>
               <div className="mt-4">
-                <Button
-                  disabled={secondsRemaining > 0}
-                  className="inline-flex items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 font-semibold text-sm/6 text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none disabled:opacity-50 data-hover:bg-gray-600 data-open:bg-gray-700 data-focus:outline data-focus:outline-white"
-                  onClick={() => {
-                    handleRemove(host);
-                    setOpen(false);
-                  }}
-                >
-                  {secondsRemaining > 0
-                    ? `Wait ${secondsRemaining}s`
-                    : 'Yes, remove!'}
-                </Button>
+                {canRemove ? (
+                  <Button
+                    key="confirm"
+                    intent="destructive"
+                    onClick={() => {
+                      handleRemove(host);
+                      setOpen(false);
+                    }}
+                  >
+                    Yes, remove!
+                  </Button>
+                ) : (
+                  <Button disabled key="wait">
+                    Wait {secondsRemaining}s
+                  </Button>
+                )}
               </div>
             </DialogPanel>
           </div>
