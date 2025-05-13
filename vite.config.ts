@@ -18,4 +18,5 @@ export default defineConfig({
       name: 'Blockly',
     },
   },
+  define: { 'process.env.NODE_ENV': '"production"' },
 });
