@@ -59,14 +59,14 @@ export function TabsList() {
           <div key={tab.id} class="flex items-center gap-3">
             {tab.favIconUrl ? (
               <img
-                class="size-10 rounded-lg bg-zinc-100 p-3"
+                class="size-10 rounded-xl bg-stone-800 p-3"
                 src={tab.favIconUrl}
                 alt={tab.title}
               />
             ) : (
-              <div class="size-5 rounded-lg bg-stone-300" />
+              <div class="size-10 rounded-xl bg-stone-800" />
             )}
-            <span>{tab.title}</span>
+            <span class="truncate">{tab.title}</span>
             <button
               onClick={() => handleBlock(tab.url)}
               type="button"
