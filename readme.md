@@ -6,8 +6,8 @@ Block distracting websites.
 
 ## Installation
 
-- [Chrome Installation](https://chromewebstore.google.com/detail/blockly/mhnpimenpmkaflocjebpejaidjlgnmhm)
-- [Manual Installation](./installation.md)
+- [Chrome](https://chromewebstore.google.com/detail/blockly/mhnpimenpmkaflocjebpejaidjlgnmhm)
+- [Manual](./installation.md)
 
 ## Content
 
