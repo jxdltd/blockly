@@ -2,7 +2,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import type { ComponentProps } from 'preact';
 import { cn } from './cn';
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   'cursor-pointer rounded-xl px-3 py-2 font-medium text-sm',
   {
     variants: {
