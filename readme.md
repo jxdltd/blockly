@@ -1,4 +1,4 @@
-![Blockly](./images/logo.png)
+<img src="./images/logo.png" alt="Blockly" width="200" style="margin-bottom: 20px" />
 
 Block distracting websites.
 
