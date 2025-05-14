@@ -15,14 +15,28 @@ import manifest from "../../../src/public/manifest.json";
   <body
     class="bg-stone-100 flex flex-col items-center justify-center min-h-screen"
   >
-    <a
-      href="https://chromewebstore.google.com/detail/blockly/mhnpimenpmkaflocjebpejaidjlgnmhm"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mb-4 text-xs font-medium px-2 py-1 rounded-lg border-2 border-red-500 text-red-500 hover:-translate-y-0.5 transition-transform"
-      >v{manifest['version']}</a
-    >
-    <h1 class="text-2xl font-medium mb-5 font-logo text-red-500">Blockly</h1>
+    <div class="mb-10">
+      <a
+        href="https://startupfa.me/s/blockly?utm_source=blockly.jxd.dev"
+        target="_blank"
+        ><img
+          src="https://startupfa.me/badges/featured/light.webp"
+          alt="Featured on Startup Fame"
+          width="171"
+          height="54"
+        /></a
+      >
+    </div>
+    <div class="flex items-center gap-5 mb-5">
+      <h1 class="text-2xl font-medium font-logo text-red-500">Blockly</h1>
+      <a
+        href="https://chromewebstore.google.com/detail/blockly/mhnpimenpmkaflocjebpejaidjlgnmhm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-medium px-2 py-1 rounded-lg border-2 border-red-500 text-red-500 hover:-translate-y-0.5 transition-transform"
+        >v{manifest["version"]}</a
+      >
+    </div>
     <p class="text-center text-balance max-w-md mb-8 text-stone-800">
       Blockly is a free and open-source browser extension that removes
       distractions from the web.
